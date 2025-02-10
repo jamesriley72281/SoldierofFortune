@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form with Image Placeholder</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+      }
+      .header {
+        width: 100%;
+        height: 200px; /* Adjust height for the large image */
+        background-image: url("https://img.freepik.com/free-vector/versus-vs-screen-banner-battle-comparision_1017-26142.jpg"); /* Add your image URL here */
+        background-size: cover;
+        background-position: center;
+      }
+      .header h1 {
+        color: white;
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 36px;
+        font-weight: bold;
+      }
+      .container {
+        max-width: 400px;
+        margin: auto;
+        padding: 20px;
+      }
+      .image-placeholder {
+        width: 100%;
+        min-height: 400px; /* Adjust based on card size */
+        background-color: #ddd;
+        display: flex;
+        align-items: flex-start; /* Aligns image to the top of the placeholder */
+        justify-content: center;
+        margin: 0 0 20px 0; /* Moves image closer to the form */
+        padding-top: 50px; /* Adds spacing inside to lower the image */
+        overflow: visible; /* Prevents cropping */
+      }
+      form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      input,
+      button {
+        margin-bottom: 10px; /* Adds space between input and button */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <h1>Is Your Card Better Than Solider of Fortune</h1>
+      <!-- Page title centered over the large image -->
+    </div>
+    <div class="container">
+      <div class="image-placeholder" id="imagePlaceholder">
+        Image Placeholder
+      </div>
+      <form id="inputForm">
+        <input
+          type="text"
+          id="textInput"
+          placeholder="Enter text here"
+          required
+        />
+        <button type="submit" id="submitButton">Submit</button>
+      </form>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
