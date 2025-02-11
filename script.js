@@ -2,7 +2,6 @@ const inputField = document.querySelector("#textInput");
 const submitBtn = document.querySelector("#submitButton");
 const imagePlaceholder = document.querySelector("#imagePlaceholder");
 const errorMessage = document.getElementById("errorMessage");
-const loadingIndicator = document.getElementById("loadingIndicator");
 
 const hideInputAndButton = () => {
   inputField.style.opacity = "0";
@@ -20,9 +19,8 @@ const fetchScryfall = function (card) {
   // Hide input and button
   hideInputAndButton();
 
-  // Show loading indicator
-  loadingIndicator.style.display = "block";
-  imagePlaceholder.style.display = "none"; // Hide the image placeholder while loading
+  // Hide image placeholder
+  imagePlaceholder.style.display = "none";
 
   fetch(`https://api.scryfall.com/cards/named?fuzzy=${card}`)
     .then(async (response) => {
@@ -33,9 +31,8 @@ const fetchScryfall = function (card) {
       return response.json();
     })
     .then((data) => {
-      // Hide loading indicator and show the image placeholder
-      loadingIndicator.style.display = "none";
-      imagePlaceholder.style.display = "block"; // Show the image placeholder
+      // Show the image placeholder
+      imagePlaceholder.style.display = "block";
 
       // Clear previous content
       imagePlaceholder.innerHTML = "";
@@ -71,7 +68,7 @@ const fetchScryfall = function (card) {
 
       // Wait for the image to load before applying the fade-in effect
       img.onload = function () {
-        img.style.opacity = "1"; // Apply fade-in
+        img.style.opacity = "1";
 
         // Display the message only after the image has fully loaded
         if (data.oracle_id === "a46d96d9-8e59-4777-8208-7730b9e33240") {
@@ -105,8 +102,7 @@ const fetchScryfall = function (card) {
     })
     .catch((err) => {
       errorMessage.textContent = `Error: ${err.message}`;
-      loadingIndicator.style.display = "none"; // Hide loading indicator if there's an error
-      showInputAndButton(); // Make sure input/button reappear even if there's an error
+      showInputAndButton();
     });
 };
 
