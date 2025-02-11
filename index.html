@@ -51,6 +51,14 @@
       button {
         margin-bottom: 10px; /* Adds space between input and button */
       }
+      /* Add more space between submit button and "Buy me a pizza" button */
+      #submitButton {
+        margin-bottom: 20px; /* Adjust this value to control space */
+      }
+      /* Add padding after the "Buy me a pizza" button */
+      .bmc-container {
+        padding-bottom: 0px; /* Optional, remove padding below button */
+      }
     </style>
   </head>
   <body>
@@ -70,6 +78,23 @@
         />
         <button type="submit" id="submitButton">Submit</button>
       </form>
+
+      <!-- "Buy Me a Pizza" button with added padding -->
+      <div class="bmc-container">
+        <script
+          type="text/javascript"
+          src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js"
+          data-name="bmc-button"
+          data-slug="jamesriley"
+          data-color="#FFDD00"
+          data-emoji="🍕"
+          data-font="Bree"
+          data-text="Buy me a pizza"
+          data-outline-color="#000000"
+          data-font-color="#000000"
+          data-coffee-color="#ffffff"
+        ></script>
+      </div>
     </div>
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js"
