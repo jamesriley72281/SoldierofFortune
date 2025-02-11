@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Form with Image Placeholder</title>
+    <title>Soldier of Fortune</title>
     <style>
       body {
         font-family: Arial, sans-serif;
@@ -13,10 +13,10 @@
       }
       .header {
         width: 100%;
-        height: 200px; /* Adjust height for the large image */
-        background-image: url("https://img.freepik.com/free-vector/versus-vs-screen-banner-battle-comparision_1017-26142.jpg"); /* Add your image URL here */
+        height: 250px;
+        background-image: url("https://github.com/jamesriley72281/SoldierofFortune/blob/main/banner.jpg?raw=true");
         background-size: cover;
-        background-position: center;
+        background-position: center 45%;
       }
       .header h1 {
         color: white;
@@ -55,13 +55,16 @@
   </head>
   <body>
     <div class="header">
-      <h1>Is Your Card Better Than Solider of Fortune</h1>
-      <!-- Page title centered over the large image -->
+      <h1>Is Your Card Better Than Solider of Fortune?</h1>
     </div>
     <div class="container">
-      <div class="image-placeholder" id="imagePlaceholder">
-        Image Placeholder
+      <!-- Add loading spinner in HTML, you can customize or add your own -->
+      <div id="loadingIndicator" style="text-align: center; display: none">
+        <div class="spinner"></div>
+        <!-- Example spinner -->
       </div>
+      <div class="image-placeholder" id="imagePlaceholder"></div>
+      <div id="errorMessage" style="color: red; margin-bottom: 15px"></div>
       <form id="inputForm">
         <input
           type="text"
@@ -72,6 +75,12 @@
         <button type="submit" id="submitButton">Submit</button>
       </form>
     </div>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js"
+      integrity="sha512-WFN04846sdKMIP5LKNphMaWzU7YpMyCU245etK3g/2ARYbPK9Ub18eG+ljU96qKRCWh+quCY7yefSmlkQw1ANQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
     <script src="script.js"></script>
   </body>
 </html>
