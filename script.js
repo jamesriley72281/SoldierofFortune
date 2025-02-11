@@ -26,7 +26,7 @@ const fetchScryfall = function (card) {
     .then(async (response) => {
       if (!response.ok) {
         const data = await response.json();
-        throw new Error(`${data.details} please do better`);
+        throw new Error(`${data.details} Please do better next time`);
       }
       return response.json();
     })
